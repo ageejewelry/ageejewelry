@@ -1,1 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agee Jewelry — Hip Hop Jewelry</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #D4AF37;
+    --gold-light: #F0D060;
+    --red: #8B0000;
+    --red-bright: #C0392B;
+    --black: #080808;
+    --black-2: #111111;
+    --black-3: #1a1a1a;
+    --white: #F5F0E8;
+    --gray: #888;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-weight: 300; overflow-x: hidden; }
 
+  /* MARQUEE */
+  .marquee-bar { background: var(--red); padding: 10px 0; overflow: hidden; white-space: nowrap; position: relative; z-index: 101; }
+  .marquee-track { display: inline-block; animation: marquee 25s linear infinite; }
+  .marquee-track span { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: var(--gold); padding: 0 40px; text-transform: uppercase; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: linear-gradient(180deg, rgba(8,8,8,0.98) 0%, transparent 100%); border-bottom: 1px solid rgba(212,175,55,0.1); }
+  .nav-logo { font-family: 'Cinzel Decorative', serif; font-size: 18px; color: var(--gold); letter-spacing: 2px; text-decoration: none; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--white); text-decoration: none; opacity: 0.7; transition: opacity 0.2s, color 0.2s; }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 40px 80px; position: relative; background: radial-gradient(ellipse at center, #1a0a0a 0%, var(--black) 70%); }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.04) 0%, transparent 70%); pointer-events: none; }
+  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 6px; color: var(--red-bright); text-transform: uppercase; margin-bottom: 24px; }
+  .hero-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(36px, 8vw, 90px); color: var(--gold); line-height: 1.05; margin-bottom: 16px; text-shadow: 0 0 60px rgba(212,175,55,0.3); }
+  .hero-sub { font-family: 'Cinzel', serif; font-size: clamp(12px, 2vw, 16px); letter-spacing: 4px; color: var(--white); opacity: 0.6; margin-bottom: 48px; text-transform: uppercase; }
+  .hero-cta { display: inline-block; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 16px 48px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+  .hero-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* SECTION HEADERS */
+  .section-header { text-align: center; padding: 80px 40px 48px; }
+  .section-eyebrow { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 5px; color: var(--red-bright); text-transform: uppercase; margin-bottom: 12px; }
+  .section-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(22px, 4vw, 38px); color: var(--gold); letter-spacing: 1px; }
+  .section-divider { width: 60px; height: 1px; background: var(--gold); margin: 20px auto 0; opacity: 0.4; }
+
+  /* SHOP */
+  .shop { background: var(--black-2); padding: 0 40px 80px; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; max-width: 1200px; margin: 0 auto; }
+  .product-card { background: var(--black-3); position: relative; overflow: hidden; transition: transform 0.3s; }
+  .product-card:hover { transform: translateY(-4px); }
+  .product-card:hover .card-overlay { opacity: 1; }
+  .product-media { position: relative; aspect-ratio: 1/1; background: #0d0d0d; overflow: hidden; }
+  .product-media-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%); }
+  .placeholder-icon { font-size: 48px; opacity: 0.3; }
+  .placeholder-text { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 3px; color: var(--gold); opacity: 0.4; text-transform: uppercase; }
+  .card-overlay { position: absolute; inset: 0; background: rgba(212,175,55,0.05); opacity: 0; transition: opacity 0.3s; border: 1px solid rgba(212,175,55,0.2); pointer-events: none; }
+  .sale-badge { position: absolute; top: 16px; left: 16px; background: var(--red); font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px; color: var(--white); padding: 4px 10px; text-transform: uppercase; z-index: 2; }
+  .product-info { padding: 20px 24px 24px; border-top: 1px solid rgba(212,175,55,0.1); }
+  .product-name { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 1px; color: var(--white); margin-bottom: 6px; line-height: 1.4; }
+  .product-desc { font-size: 11px; color: var(--gray); line-height: 1.6; margin-bottom: 16px; }
+  .product-price-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .product-price { font-family: 'Cinzel', serif; font-size: 18px; color: var(--gold); }
+  .product-price-old { font-size: 12px; color: var(--gray); text-decoration: line-through; }
+  .buy-btn { display: block; width: 100%; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 14px; text-align: center; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .buy-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* FEATURES */
+  .features { padding: 80px 40px; background: var(--black); }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 900px; margin: 0 auto; text-align: center; }
+  .feature-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+  .feature-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+  .feature-text { font-size: 12px; color: var(--gray); line-height: 1.6; }
+
+  /* INSTAGRAM */
+  .instagram-section { background: var(--black-2); padding: 0 40px 80px; text-align: center; }
+  .ig-link { display: inline-flex; align-items: center; gap: 10px; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: var(--gold); text-decoration: none; border: 1px solid rgba(212,175,55,0.3); padding: 16px 40px; transition: border-color 0.2s, background 0.2s; text-transform: uppercase; }
+  .ig-link:hover { border-color: var(--gold); background: rgba(212,175,55,0.05); }
+
+  /* FOOTER */
+  footer { background: var(--black-2); border-top: 1px solid rgba(212,175,55,0.1); padding: 48px 40px 32px; text-align: center; }
+  .footer-logo { font-family: 'Cinzel Decorative', serif; font-size: 20px; color: var(--gold); margin-bottom: 16px; }
+  .footer-links { display: flex; justify-content: center; gap: 32px; list-style: none; margin-bottom: 32px; flex-wrap: wrap; }
+  .footer-links a { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 3px; color: var(--gray); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 11px; color: #444; letter-spacing: 1px; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    .shop, .features, .instagram-section { padding-left: 20px; padding-right: 20px; }
+    .section-header { padding: 60px 20px 36px; }
+    .product-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
+    footer { padding: 40px 20px 24px; }
+  }
+  @media (max-width: 480px) {
+    .product-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span>Free Shipping on Orders $150+</span><span>✦</span>
+    <span>VVS Moissanite</span><span>✦</span>
+    <span>Silver Plated</span><span>✦</span>
+    <span>Agee Jewelry</span><span>✦</span>
+    <span>Free Shipping on Orders $150+</span><span>✦</span>
+    <span>VVS Moissanite</span><span>✦</span>
+    <span>Silver Plated</span><span>✦</span>
+    <span>Agee Jewelry</span><span>✦</span>
+  </div>
+</div>
+
+<nav>
+  <a href="#" class="nav-logo">Agee Jewelry</a>
+  <ul class="nav-links">
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#custom">Custom</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">United States</div>
+  <h1 class="hero-title">Agee<br>Jewelry</h1>
+  <p class="hero-sub">Hip Hop Jewelry</p>
+  <a href="#shop" class="hero-cta">Shop the Collection</a>
+</section>
+
+<section class="shop" id="shop">
+  <div class="section-header">
+    <div class="section-eyebrow">Collection</div>
+    <h2 class="section-title">Shop All Pieces</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="product-media">
+        <div class="product-media-placeholder">
+          <span class="placeholder-icon">⛓</span>
+          <span class="placeholder-text">HAVIN Chain</span>
+        </div>
+        <div class="card-overlay"></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">HAVIN Moissanite Cuban Link</div>
+        <div class="product-desc">Moissanite-iced, silver plated, built to turn heads. A statement piece that carries weight without saying a word. Wear what you've earned.</div>
+        <div class="product-price-row"><span class="product-price">$250</span></div>
+        <a href="https://buy.stripe.com/3cI14ng1a7z4cbnalU8Zq00" target="_blank" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-media">
+        <div class="product-media-placeholder">
+          <span class="placeholder-icon">⛓</span>
+          <span class="placeholder-text">MOTION Chain</span>
+        </div>
+        <div class="card-overlay"></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">MOTION Moissanite Cuban Link</div>
+        <div class="product-desc">Every step, every turn, every angle catches light. Moissanite-iced and silver plated, built for the ones who move with purpose.</div>
+        <div class="product-price-row"><span class="product-price">$250</span></div>
+        <a href="https://buy.stripe.com/6oUfZhbKU9HcdfrbpY8Zq01" target="_blank" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-media">
+        <div class="product-media-placeholder">
+          <span class="placeholder-icon">⌚</span>
+          <span class="placeholder-text">BussDown Watch</span>
+        </div>
+        <div class="card-overlay"></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">BussDown Moissanite Patek</div>
+        <div class="product-desc">Time never looked this cold. Fully iced in moissanite, silver plated, dripping from every angle. Wear the flex on your wrist.</div>
+        <div class="product-price-row"><span class="product-price">$350</span></div>
+        <a href="https://buy.stripe.com/00waEXaGQ7z4grD51A8Zq05" target="_blank" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-media">
+        <div class="product-media-placeholder">
+          <span class="placeholder-icon">💎</span>
+          <span class="placeholder-text">Bracelet</span>
+        </div>
+        <div class="card-overlay"></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Moissanite Tennis Bracelet</div>
+        <div class="product-desc">Wrist game certified. VVS ice to every fit — lightweight, bold, and built to be noticed.</div>
+        <div class="product-price-row">
+          <span class="product-price">$75</span>
+          <span class="product-price-old">$100</span>
+        </div>
+        <a href="https://buy.stripe.com/3cI00jeX62eKejv3Xw8Zq03" target="_blank" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-media">
+        <div class="product-media-placeholder">
+          <span class="placeholder-icon">✦</span>
+          <span class="placeholder-text">Stud Earrings</span>
+        </div>
+        <div class="card-overlay"></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Moissanite Stud Earrings</div>
+        <div class="product-desc">Simple. Iced. Effortless. VVS shine that elevates any look — day or night, they hit different.</div>
+        <div class="product-price-row">
+          <span class="product-price">$30</span>
+          <span class="product-price-old">$50</span>
+        </div>
+        <a href="https://buy.stripe.com/7sY7sL6qA3iO0sF51A8Zq04" target="_blank" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-media">
+        <div class="product-media-placeholder">
+          <span class="placeholder-icon">💍</span>
+          <span class="placeholder-text">Rings</span>
+        </div>
+        <div class="card-overlay"></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Moissanite Ring (Men &amp; Women)</div>
+        <div class="product-desc">Iced in moissanite and made for everyone. Clean, versatile, VVS shine at a price that makes sense. Stack it or let it stand alone.</div>
+        <div class="product-price-row"><span class="product-price">$30</span></div>
+        <a href="https://buy.stripe.com/cNi00j8yI3iO6R3cu28Zq02" target="_blank" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="features">
+  <div class="features-grid">
+    <div>
+      <span class="feature-icon">💎</span>
+      <div class="feature-title">VVS Moissanite</div>
+      <div class="feature-text">Premium moissanite stones with diamond-level brilliance at a fraction of the cost.</div>
+    </div>
+    <div>
+      <span class="feature-icon">🚚</span>
+      <div class="feature-title">Fast Shipping</div>
+      <div class="feature-text">Free shipping on all orders $150 and up. Every piece ships securely packaged.</div>
+    </div>
+    <div>
+      <span class="feature-icon">✦</span>
+      <div class="feature-title">Silver Plated</div>
+      <div class="feature-text">High quality silver plating built to last and keep its shine.</div>
+    </div>
+    <div>
+      <span class="feature-icon">🔒</span>
+      <div class="feature-title">Secure Checkout</div>
+      <div class="feature-text">Powered by Stripe. Pay with card, Apple Pay, Cash App, Affirm and more.</div>
+    </div>
+  </div>
+</section>
+
+<section class="instagram-section" id="instagram">
+  <div class="section-header">
+    <div class="section-eyebrow">Follow Us</div>
+    <h2 class="section-title">@ageejewelry</h2>
+    <div class="section-divider"></div>
+  </div>
+  <p style="font-size:13px; color:var(--gray); margin-bottom:32px; max-width:400px; margin-left:auto; margin-right:auto; line-height:1.7;">
+    See every piece in motion. Watch the ice catch light the way photos never can.
+  </p>
+  <a href="https://www.instagram.com/ageejewelry/" target="_blank" class="ig-link">◈ &nbsp; View on Instagram</a>
+</section>
+
+<section id="custom" style="padding: 80px 40px; background: var(--black); text-align:center;">
+  <div class="section-header" style="padding-top:0;">
+    <div class="section-eyebrow">Bespoke</div>
+    <h2 class="section-title">Custom Pieces</h2>
+    <div class="section-divider"></div>
+  </div>
+  <p style="font-size:13px; color:var(--gray); line-height:1.8; max-width:500px; margin:24px auto 32px;">
+    Want something built specifically for you? We work with customers on custom moissanite pieces. Reach out and let's create something unique.
+  </p>
+  <a href="mailto:ageejewelry@gmail.com" style="display:inline-block; font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); border:1px solid rgba(212,175,55,0.4); padding:14px 40px; text-decoration:none; transition:all 0.2s;">Inquire About Custom</a>
+</section>
+
+<footer id="contact">
+  <div class="footer-logo">Agee Jewelry</div>
+  <ul class="footer-links">
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="https://www.instagram.com/ageejewelry/" target="_blank">Instagram</a></li>
+    <li><a href="mailto:ageejewelry@gmail.com">Contact</a></li>
+    <li><a href="#custom">Custom Orders</a></li>
+  </ul>
+  <div class="footer-copy">&copy; 2026 Agee Jewelry &middot; All Rights Reserved</div>
+</footer>
+
+</body>
+</html>
