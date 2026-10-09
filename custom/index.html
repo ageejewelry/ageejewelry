@@ -29,7 +29,7 @@
     <h1 class="section-title">Custom VVS D Moissanite &amp; 925 Silver Design Studio</h1>
     <div class="section-divider"></div>
   </div>
-  <div class="page-wrap">
+  <div class="page-wrap wide">
     <p style="text-align:center;"><div class="stock-badge made-to-order">Made to Order &mdash; 50% Deposit Starts Production</div></p>
     <p class="page-lede">Tell us what you want built. We&rsquo;ll review your request, send a quote, and start CAD once your deposit is in.</p>
 
@@ -37,7 +37,52 @@
       <strong>Deposit Policy:</strong> All custom pieces require a <strong>50% non-refundable deposit</strong> to initialize 3D CAD modeling and production. The remaining 50% balance is due upon completion prior to local hand delivery or shipment.
     </div>
 
-    <form class="req-form" name="custom-request" method="POST" action="/custom/thanks/" enctype="multipart/form-data"
+    <div class="custom-layout" id="custom-layout">
+      <aside id="preview3d" class="pv" aria-label="3D piece preview" hidden>
+        <div class="pv-head">
+          <div class="section-eyebrow" style="margin:0">Live 3D Preview</div>
+          <p class="pv-sub">Pick a piece and finish, then drag to spin it and see every angle.</p>
+        </div>
+        <div class="pv-stage" tabindex="-1">
+          <canvas tabindex="0" aria-label="Interactive 3D preview of your selected piece. Drag or use arrow keys to rotate."></canvas>
+          <div class="pv-hint" aria-hidden="true">Drag to rotate</div>
+        </div>
+        <div class="pv-caption" aria-live="polite"></div>
+
+        <div class="pv-group" role="group" aria-label="Piece type">
+          <button type="button" class="pv-chip" data-piece="Custom Ring" aria-pressed="false">Ring</button>
+          <button type="button" class="pv-chip" data-piece="Custom Nameplate" aria-pressed="false">Nameplate</button>
+          <button type="button" class="pv-chip" data-piece="Picture Frame Pendant" aria-pressed="false">Picture Frame</button>
+          <button type="button" class="pv-chip" data-piece="Logo/Emblem Pendant" aria-pressed="false">Emblem</button>
+          <button type="button" class="pv-chip" data-piece="Other" aria-pressed="false">Chain</button>
+        </div>
+
+        <div class="pv-row">
+          <div class="pv-group" role="group" aria-label="Metal finish">
+            <button type="button" class="pv-swatch" data-finish="925 Sterling Silver" style="--sw:#e9eaec" aria-pressed="true" aria-label="925 Sterling Silver" title="925 Sterling Silver"></button>
+            <button type="button" class="pv-swatch" data-finish="14K Yellow Gold Plated" style="--sw:#ffc457" aria-pressed="false" aria-label="14K Yellow Gold Plated" title="14K Yellow Gold Plated"></button>
+            <button type="button" class="pv-swatch" data-finish="Rose Gold Plated" style="--sw:#eaa28f" aria-pressed="false" aria-label="Rose Gold Plated" title="Rose Gold Plated"></button>
+          </div>
+          <div class="pv-group" role="group" aria-label="Stone cut">
+            <button type="button" class="pv-chip" data-cut="round" aria-pressed="true">Round</button>
+            <button type="button" class="pv-chip" data-cut="baguette" aria-pressed="false">Baguette</button>
+          </div>
+        </div>
+
+        <label class="pv-name" hidden>
+          <span>Preview name</span>
+          <input type="text" id="pv-name" maxlength="12" value="AGEE" autocomplete="off" spellcheck="false">
+        </label>
+
+        <label class="pv-zoom">
+          <span>Zoom</span>
+          <input type="range" id="pv-zoom" min="0" max="100" value="55" aria-label="Zoom">
+        </label>
+
+        <p class="pv-note">Illustrative preview only. Stone count, sizes and details are set in your CAD render, which you approve before production.</p>
+      </aside>
+
+      <form class="req-form" name="custom-request" method="POST" action="/custom/thanks/" enctype="multipart/form-data"
           data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="custom-request">
       <p class="hp"><label>Don&rsquo;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -95,6 +140,7 @@
 
       <button type="submit" class="btn-gold">Submit Custom Quote Request</button>
     </form>
+    </div>
   </div>
 </main>
 <footer class="site-footer" id="contact">
@@ -137,5 +183,6 @@
   <a href="sms:+16197248107" class="btn-ig">Text Us</a>
   <a href="/custom/" class="btn-custom">Custom Order</a>
 </div>
+<script src="/custom/preview3d.js" defer></script>
 </body>
 </html>
