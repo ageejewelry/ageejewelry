@@ -220,3 +220,13 @@ a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visib
   .marquee-track { animation: none !important; }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* Announcement bar with two inline links, three-button mobile bar */
+.announce span { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1.5px; line-height: 1.4; color: var(--gold); }
+.announce span a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
+.announce span a:hover { color: #fff; }
+@media (max-width: 700px) { .announce span { font-size: 10px; letter-spacing: 0.5px; } }
+@media (max-width: 768px) {
+  .mobile-action-bar { grid-template-columns: 1fr 1fr 1.4fr; }
+  .mobile-action-bar a { font-size: 10px; letter-spacing: 1px; padding: 8px 6px; }
+}
