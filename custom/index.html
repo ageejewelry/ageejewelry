@@ -60,6 +60,7 @@
         <div class="pv-row">
           <div class="pv-group" role="group" aria-label="Metal finish">
             <button type="button" class="pv-swatch" data-finish="925 Sterling Silver" style="--sw:#e9eaec" aria-pressed="true" aria-label="925 Sterling Silver" title="925 Sterling Silver"></button>
+            <button type="button" class="pv-swatch" data-finish="Silver Plated" style="--sw:#cfd6e2" aria-pressed="false" aria-label="Silver Plated" title="Silver Plated"></button>
             <button type="button" class="pv-swatch" data-finish="14K Yellow Gold Plated" style="--sw:#ffc457" aria-pressed="false" aria-label="14K Yellow Gold Plated" title="14K Yellow Gold Plated"></button>
             <button type="button" class="pv-swatch" data-finish="Rose Gold Plated" style="--sw:#eaa28f" aria-pressed="false" aria-label="Rose Gold Plated" title="Rose Gold Plated"></button>
           </div>
@@ -101,9 +102,14 @@
         <label class="field">Metal Finish
           <select name="metal_finish" required>
             <option value="" disabled selected>Select a finish</option>
-            <option>925 Sterling Silver</option>
-            <option>14K Yellow Gold Plated</option>
-            <option>Rose Gold Plated</option>
+            <optgroup label="Silver">
+              <option>925 Sterling Silver</option>
+              <option>Silver Plated</option>
+            </optgroup>
+            <optgroup label="Gold">
+              <option>14K Yellow Gold Plated</option>
+              <option>Rose Gold Plated</option>
+            </optgroup>
           </select>
         </label>
 

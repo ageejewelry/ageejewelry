@@ -28,6 +28,7 @@
   };
   var FINISHES = {
     '925 Sterling Silver': { color: 0xe9eaec, rough: 0.16 },
+    'Silver Plated': { color: 0xdbe2ee, rough: 0.07 },
     '14K Yellow Gold Plated': { color: 0xffc457, rough: 0.14 },
     'Rose Gold Plated': { color: 0xeaa28f, rough: 0.15 }
   };
