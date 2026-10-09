@@ -12,7 +12,7 @@
   --bar-h: 36px;
   --nav-h: 64px;
 }
-@media (max-width: 1180px) { :root { --nav-h: 108px; } }
+@media (max-width: 860px) { :root { --nav-h: 108px; } }
 @media (max-width: 700px)  { :root { --bar-h: 52px; } }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -30,7 +30,7 @@ nav.site-nav { position: fixed; top: var(--bar-h); left: 0; right: 0; height: va
 nav.site-nav .nav-links { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
 nav.site-nav .nav-links a { font-size: 10px; letter-spacing: 2px; white-space: nowrap; }
 nav.site-nav .nav-links a.is-active { color: var(--gold); opacity: 1; }
-@media (max-width: 1180px) {
+@media (max-width: 860px) {
   nav.site-nav { padding: 0 20px; align-content: center; }
   nav.site-nav .nav-logo { height: 56px; display: flex; align-items: center; }
   nav.site-nav .nav-links { display: flex; order: 3; width: 100%; height: 44px; align-items: center; gap: 22px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-top: 1px solid rgba(212,175,55,0.1); }
