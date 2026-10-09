@@ -180,3 +180,43 @@ footer.site-footer { background: var(--black-2); border-top: 1px solid rgba(212,
   .mobile-action-bar .btn-ig { color: var(--gold); border: 1px solid rgba(212,175,55,0.6); }
   .mobile-action-bar .btn-custom { color: #000; background: var(--gold-btn); }
 }
+
+/* Sold items */
+.product-card.is-sold:hover { transform: none; }
+.product-card.is-sold .card-photo { filter: grayscale(0.7) brightness(0.65); }
+.sold-ribbon { position: absolute; top: 14px; right: 14px; z-index: 4; padding: 6px 14px; background: rgba(8,8,8,0.85); border: 1px solid rgba(245,240,232,0.5); font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--white); }
+.stock-badge.sold { color: #f87171; border-color: rgba(248,113,113,0.45); background: rgba(248,113,113,0.08); }
+.buy-btn.is-disabled { background: #242424; color: #8a8a8a; cursor: not-allowed; pointer-events: none; }
+.sold-note { margin-top: 12px; text-align: center; font-size: 11px; line-height: 1.6; color: var(--gray); }
+.sold-note a { color: var(--gold); text-decoration: none; }
+.sold-note a:hover { text-decoration: underline; }
+
+/* Line icons (replace emojis) */
+.feature-icon svg, .badge .ico svg { width: 32px; height: 32px; color: var(--gold); }
+.feature-icon { line-height: 1; }
+.badge .ico { line-height: 1; }
+
+/* =====================================================================
+   Sold items, icons, focus states
+   ===================================================================== */
+.stock-badge.sold-out { color: #b9b3a7; border-color: rgba(185,179,167,0.4); background: rgba(185,179,167,0.08); }
+.stock-badge.sold-out::before { box-shadow: none; opacity: 0.7; }
+.product-card.is-sold .card-photo { filter: grayscale(0.7) brightness(0.55); }
+.product-card.is-sold .product-name, .product-card.is-sold .product-desc, .product-card.is-sold .spec-block { opacity: 0.6; }
+.product-card.is-sold .product-price { opacity: 0.5; text-decoration: line-through; }
+.product-card.is-sold:hover { transform: none; }
+.sold-ribbon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-8deg); z-index: 4; padding: 10px 36px; border: 2px solid var(--gold); background: rgba(8,8,8,0.82); color: var(--gold); font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; pointer-events: none; }
+.buy-btn.is-disabled, .buy-btn.is-disabled:hover { background: #262626; color: #8a8a8a; cursor: not-allowed; transform: none; }
+.sold-link { display: block; margin-top: 12px; text-align: center; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+.sold-link:hover { text-decoration: underline; }
+
+.badge .ico svg { width: 34px; height: 34px; color: var(--gold); }
+.badge .ico { margin-bottom: 14px; }
+.feature-icon svg { width: 30px; height: 30px; color: var(--gold); }
+
+a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track { animation: none !important; }
+  * { transition-duration: 0.01ms !important; }
+}
