@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Custom Jewelry &amp; Deposits — Agee Jewelry</title>
 <meta name="description" content="Custom VVS D moissanite and 925 silver jewelry. Submit a quote request; 50% deposit starts CAD and production.">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&amp;family=Cinzel:wght@400;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css">
 </head>
 <body>
@@ -33,6 +33,7 @@
     <div class="section-divider"></div>
   </div>
   <div class="page-wrap">
+    <p style="text-align:center;"><div class="stock-badge made-to-order">Made to Order &mdash; 50% Deposit Starts Production</div></p>
     <p class="page-lede">Tell us what you want built. We&rsquo;ll review your request, send a quote, and start CAD once your deposit is in.</p>
 
     <div class="deposit-box" role="note">
@@ -44,33 +45,37 @@
       <input type="hidden" name="form-name" value="custom-request">
       <p class="hp"><label>Don&rsquo;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
-      <label class="field">Full Name
-        <input type="text" name="full_name" autocomplete="name" required>
-      </label>
+      <div class="row-2">
+        <label class="field">Full Name
+          <input type="text" name="full_name" autocomplete="name" required>
+        </label>
 
-      <label class="field">Phone Number / Instagram Handle
-        <input type="text" name="contact" placeholder="(704) 555-0123 or @yourhandle" required>
-      </label>
+        <label class="field">Phone Number / Instagram Handle
+          <input type="text" name="contact" placeholder="(704) 555-0123 or @yourhandle" required>
+        </label>
+      </div>
 
-      <label class="field">Metal Finish
-        <select name="metal_finish" required>
-          <option value="" disabled selected>Select a finish</option>
-          <option>925 Sterling Silver</option>
-          <option>14K Yellow Gold Plated</option>
-          <option>Rose Gold Plated</option>
-        </select>
-      </label>
+      <div class="row-2">
+        <label class="field">Metal Finish
+          <select name="metal_finish" required>
+            <option value="" disabled selected>Select a finish</option>
+            <option>925 Sterling Silver</option>
+            <option>14K Yellow Gold Plated</option>
+            <option>Rose Gold Plated</option>
+          </select>
+        </label>
 
-      <label class="field">Piece Type
-        <select name="piece_type" required>
-          <option value="" disabled selected>Select a piece type</option>
-          <option>Custom Nameplate</option>
-          <option>Picture Frame Pendant</option>
-          <option>Custom Ring</option>
-          <option>Logo/Emblem Pendant</option>
-          <option>Other</option>
-        </select>
-      </label>
+        <label class="field">Piece Type
+          <select name="piece_type" required>
+            <option value="" disabled selected>Select a piece type</option>
+            <option>Custom Nameplate</option>
+            <option>Picture Frame Pendant</option>
+            <option>Custom Ring</option>
+            <option>Logo/Emblem Pendant</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
 
       <label class="field">Sizing / Length Details
         <input type="text" name="sizing" placeholder="Ring size, chain length, or millimeter width">
@@ -130,5 +135,9 @@
   <div class="footer-copy">&copy; 2026 Agee Jewelry &middot; All Rights Reserved</div>
 </footer>
 
+<div class="mobile-action-bar">
+  <a href="https://ig.me/m/ageejewelry" class="btn-ig" target="_blank" rel="noopener">DM on Instagram</a>
+  <a href="/custom/" class="btn-custom">Order Custom (50% Deposit)</a>
+</div>
 </body>
 </html>
