@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Jewelry &amp; Deposits — Agee Jewelry</title>
+<meta name="description" content="Custom VVS D moissanite and 925 silver jewelry. Submit a quote request; 50% deposit starts CAD and production.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&amp;family=Cinzel:wght@400;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+
+<div class="announce" role="region" aria-label="Announcement">
+  <a href="https://www.instagram.com/ageejewelry/" target="_blank" rel="noopener">&#9889; Local Charlotte Pickups Available | DM @ageejewelry or Text for Same-Day Hand Delivery &#9889;</a>
+</div>
+
+<nav class="site-nav" aria-label="Main">
+  <a href="/" class="nav-logo">Agee Jewelry</a>
+  <ul class="nav-links">
+    <li><a href="/#shop">Shop All</a></li>
+    <li><a href="/#watches">Watches</a></li>
+    <li><a href="/#chains">Chains &amp; Bracelets</a></li>
+    <li><a href="/#rings">Rings</a></li>
+    <li><a href="/custom/" class="is-active">Custom Jewelry &amp; Deposits</a></li>
+    <li><a href="/authenticity/">Authenticity Proof</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="section-header">
+    <div class="section-eyebrow">Bespoke</div>
+    <h1 class="section-title">Custom VVS D Moissanite &amp; 925 Silver Design Studio</h1>
+    <div class="section-divider"></div>
+  </div>
+  <div class="page-wrap">
+    <p class="page-lede">Tell us what you want built. We&rsquo;ll review your request, send a quote, and start CAD once your deposit is in.</p>
+
+    <div class="deposit-box" role="note">
+      <strong>Deposit Policy:</strong> All custom pieces require a <strong>50% non-refundable deposit</strong> to initialize 3D CAD modeling and production. The remaining 50% balance is due upon completion prior to local hand delivery or shipment.
+    </div>
+
+    <form class="req-form" name="custom-request" method="POST" action="/custom/thanks/" enctype="multipart/form-data"
+          data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="custom-request">
+      <p class="hp"><label>Don&rsquo;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <label class="field">Full Name
+        <input type="text" name="full_name" autocomplete="name" required>
+      </label>
+
+      <label class="field">Phone Number / Instagram Handle
+        <input type="text" name="contact" placeholder="(704) 555-0123 or @yourhandle" required>
+      </label>
+
+      <label class="field">Metal Finish
+        <select name="metal_finish" required>
+          <option value="" disabled selected>Select a finish</option>
+          <option>925 Sterling Silver</option>
+          <option>14K Yellow Gold Plated</option>
+          <option>Rose Gold Plated</option>
+        </select>
+      </label>
+
+      <label class="field">Piece Type
+        <select name="piece_type" required>
+          <option value="" disabled selected>Select a piece type</option>
+          <option>Custom Nameplate</option>
+          <option>Picture Frame Pendant</option>
+          <option>Custom Ring</option>
+          <option>Logo/Emblem Pendant</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label class="field">Sizing / Length Details
+        <input type="text" name="sizing" placeholder="Ring size, chain length, or millimeter width">
+        <span class="hint">Ring sizes, chain lengths, or millimeter widths.</span>
+      </label>
+
+      <label class="field">Design Description
+        <textarea name="design_description" required placeholder="Details, fonts, baguette vs. round stone preferences, colors, text to include&hellip;"></textarea>
+      </label>
+
+      <label class="field">Reference File Upload
+        <input type="file" name="reference_files" accept="image/*,.pdf,.svg,.ai,.eps" multiple>
+        <span class="hint">Sketches, logos, or inspiration photos.</span>
+      </label>
+
+      <label class="agree">
+        <input type="checkbox" name="deposit_agreement" value="agreed" required>
+        <span>I understand that a 50% non-refundable deposit is required to approve CAD renders and begin manufacturing.</span>
+      </label>
+
+      <button type="submit" class="btn-gold">Submit Custom Quote Request</button>
+    </form>
+  </div>
+</main>
+<footer class="site-footer" id="contact">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Agee Jewelry</div>
+      <p>Hip hop jewelry &mdash; VVS moissanite pieces, custom orders, and same-day hand delivery.</p>
+      <p>&#128205; Based in Charlotte, NC &middot; Shipping nationwide</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/custom/">Custom Orders</a></li>
+        <li><a href="/authenticity/">Authenticity Proof</a></li>
+        <li><a href="/policies/#local-pickup">Local Pickup Policy</a></li>
+        <li><a href="/policies/#care">Care Guide</a></li>
+        <li><a href="mailto:ageejewelry@gmail.com">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>Instagram: <a href="https://www.instagram.com/ageejewelry/" target="_blank" rel="noopener">@ageejewelry</a></li>
+        <li>Email: <a href="mailto:ageejewelry@gmail.com">ageejewelry@gmail.com</a></li>
+        <li>Charlotte, NC &mdash; local pickup &amp; hand delivery by arrangement</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pay-row" aria-label="Accepted payments and security">
+    <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg> Apple Pay</span>
+    <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.4-.8-1.4-1.2-2.5-1.2-1.4 0-2.4.7-2.4 1.8 0 2.6 5 1.2 5 3.8 0 1.1-1.1 1.9-2.6 1.9-1.2 0-2.2-.5-2.6-1.4M12 6.5V8m0 8v1.5"/></svg> Cash App</span>
+    <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg> Credit &amp; Debit Cards</span>
+    <span class="pay-badge ssl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Secure SSL Checkout</span>
+  </div>
+  <div class="footer-copy">&copy; 2026 Agee Jewelry &middot; All Rights Reserved</div>
+</footer>
+
+</body>
+</html>
