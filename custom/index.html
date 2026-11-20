@@ -7,6 +7,7 @@
 <meta name="description" content="Custom VVS D moissanite and 925 silver jewelry. Submit a quote request; 50% deposit starts CAD and production.">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/custom/reference.css">
 </head>
 <body>
 
@@ -21,6 +22,7 @@
     <li><a href="/collection/">Made to Order</a></li>
     <li><a href="/custom/" class="is-active">Custom Jewelry &amp; Deposits</a></li>
     <li><a href="/authenticity/">Authenticity Proof</a></li>
+    <li><a href="/reviews/">Reviews</a></li>
   </ul>
 </nav>
 
@@ -38,6 +40,30 @@
       <strong>Deposit Policy:</strong> All custom pieces require a <strong>50% non-refundable deposit</strong> to initialize 3D CAD modeling and production. The remaining 50% balance is due upon completion prior to local hand delivery or shipment.
     </div>
 
+    <section class="ref-pick" aria-labelledby="ref-title">
+      <div class="ref-head">
+        <div>
+          <div class="section-eyebrow" style="margin:0">Step 1 &middot; Optional</div>
+          <h2 id="ref-title">Start From a Piece We Carry</h2>
+          <p>Tap any piece to use it as your reference, then change the metal color, stone color, size or add your name below.</p>
+        </div>
+        <div class="ref-chips" role="group" aria-label="Filter reference pieces">
+          <button type="button" class="ref-chip" data-cat="all" aria-pressed="true">All</button>
+          <button type="button" class="ref-chip" data-cat="instock" aria-pressed="false">In Stock</button>
+          <button type="button" class="ref-chip" data-cat="rings" aria-pressed="false">Rings</button>
+          <button type="button" class="ref-chip" data-cat="pendants" aria-pressed="false">Pendants</button>
+          <button type="button" class="ref-chip" data-cat="bracelets" aria-pressed="false">Bracelets</button>
+          <button type="button" class="ref-chip" data-cat="chains" aria-pressed="false">Chains</button>
+        </div>
+      </div>
+      <div class="ref-strip" id="ref-strip" tabindex="0" aria-label="Reference pieces, scroll sideways"></div>
+      <div class="ref-selected" id="ref-selected" hidden>
+        <img id="ref-sel-img" alt="">
+        <div><div class="ref-sel-k">Your reference</div><div class="ref-sel-n" id="ref-sel-name"></div>
+        <div class="ref-sel-h">Pick your metal finish and stone color in the form. We&rsquo;ll quote it and send a CAD render before production.</div></div>
+        <button type="button" class="ref-clear" id="ref-clear">Clear</button>
+      </div>
+    </section>
     <div class="custom-layout" id="custom-layout">
       <aside id="preview3d" class="pv" aria-label="3D piece preview" hidden>
         <div class="pv-head">
@@ -126,6 +152,20 @@
         </label>
       </div>
 
+      <input type="hidden" name="reference_piece" id="ref-input">
+      <label class="field">Stone Color
+        <select name="stone_color" id="ref-stone">
+          <option>Clear / White (VVS D)</option>
+          <option>Pink</option>
+          <option>Red</option>
+          <option>Blue</option>
+          <option>Yellow / Canary</option>
+          <option>Green</option>
+          <option>Black</option>
+          <option>Multi-Color</option>
+        </select>
+        <span class="hint">Colored stones can mix with clear ones. Tell us the layout in the description.</span>
+      </label>
       <label class="field">Sizing / Length Details
         <input type="text" name="sizing" placeholder="Ring size, chain length, or millimeter width">
         <span class="hint">Ring sizes, chain lengths, or millimeter widths.</span>
@@ -163,6 +203,7 @@
         <li><a href="/collection/">Made to Order Collection</a></li>
         <li><a href="/custom/">Custom Orders</a></li>
         <li><a href="/authenticity/">Authenticity Proof</a></li>
+        <li><a href="/reviews/">Customer Reviews</a></li>
         <li><a href="/policies/#local-pickup">Local Pickup Policy</a></li>
         <li><a href="/shipping/">Shipping &amp; Returns</a></li>
         <li><a href="/policies/#care">Care Guide</a></li>
@@ -191,6 +232,8 @@
   <a href="sms:+16197248107" class="btn-ig">Text Us</a>
   <a href="/custom/" class="btn-custom">Custom Order</a>
 </div>
+<script src="/collection/catalog.js"></script>
+<script src="/custom/reference.js" defer></script>
 <script src="/custom/preview3d.js" defer></script>
 </body>
 </html>
