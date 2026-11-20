@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Made to Order Collection — Agee Jewelry</title>
+<meta name="description" content="90+ made-to-order iced rings, pendants, bracelets and chains. 50% deposit starts your order. Free tracked shipping or Charlotte pickup.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/collection/collection.css">
+</head>
+<body>
+
+<div class="announce" role="region" aria-label="Announcement">
+  <span>Local Charlotte Pickups Available | <a href="https://www.instagram.com/ageejewelry/" target="_blank" rel="noopener">DM @ageejewelry</a> or <a href="sms:+16197248107">Text 619-724-8107</a> for Same-Day Hand Delivery</span>
+</div>
+
+<nav class="site-nav" aria-label="Main">
+  <a href="/" class="nav-logo">Agee Jewelry</a>
+  <ul class="nav-links">
+    <li><a href="/#shop">Shop All</a></li>
+    <li><a href="/collection/" class="is-active">Made to Order</a></li>
+    <li><a href="/custom/">Custom Jewelry &amp; Deposits</a></li>
+    <li><a href="/authenticity/">Authenticity Proof</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="section-header">
+    <div class="section-eyebrow">Made to Order</div>
+    <h1 class="section-title">The Full Collection</h1>
+    <div class="section-divider"></div>
+  </div>
+  <div class="mto-wrap">
+    <p class="page-lede">Iced rings, pendants, bracelets and chains made for you. These pieces aren&rsquo;t in our Charlotte stock yet, so they&rsquo;re ordered with a deposit.</p>
+    <div class="mto-steps" role="list">
+      <div class="mto-step" role="listitem"><span class="num">1</span><b>Pay 50% deposit</b><span>Pick your piece, finish and size. Your deposit starts the order.</span></div>
+      <div class="mto-step" role="listitem"><span class="num">2</span><b><span class="mto-wait">Ships 2&ndash;3 weeks after deposit</span></b><span>We text you updates and photos before it ships.</span></div>
+      <div class="mto-step" role="listitem"><span class="num">3</span><b>Pay balance &amp; receive</b><span>Free tracked US shipping, or same-day pickup in Charlotte.</span></div>
+    </div>
+    <div class="deposit-box" role="note"><strong>Deposit policy:</strong> Made-to-order pieces need a <strong>50% deposit</strong> before we order. Deposits are non-refundable once your piece goes into production. The balance is due before shipping or hand delivery. Want it today? <a href="/#shop">Shop in-stock pieces</a>.</div>
+
+    <div class="mto-bar">
+      <div class="mto-filters" role="group" aria-label="Filter by category">
+        <button type="button" class="mto-chip" data-cat="all" aria-pressed="true">All</button>
+        <button type="button" class="mto-chip" data-cat="rings" aria-pressed="false">Rings</button>
+        <button type="button" class="mto-chip" data-cat="pendants" aria-pressed="false">Pendants</button>
+        <button type="button" class="mto-chip" data-cat="bracelets" aria-pressed="false">Bracelets</button>
+        <button type="button" class="mto-chip" data-cat="chains" aria-pressed="false">Chains</button>
+      </div>
+      <label class="mto-sort"><span>Sort</span>
+        <select id="mto-sort">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+        </select>
+      </label>
+    </div>
+    <p class="mto-count" id="mto-count" aria-live="polite"></p>
+    <div class="mto-grid" id="mto-grid"></div>
+    <p class="mto-foot">Don&rsquo;t see it? <a href="/custom/">Design your own piece</a> or <a href="sms:+16197248107">text us a photo</a> and we&rsquo;ll source it.</p>
+  </div>
+</main>
+
+<dialog class="mto-dialog" id="mto-dialog" aria-labelledby="mto-d-title">
+  <form class="req-form mto-form" name="made-to-order" method="POST" action="/collection/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="made-to-order">
+    <p class="hp"><label>Don&rsquo;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <input type="hidden" name="item">
+    <input type="hidden" name="code">
+    <input type="hidden" name="price">
+    <input type="hidden" name="deposit">
+    <button type="button" class="mto-x" aria-label="Close" data-close>&times;</button>
+    <div class="mto-d-head">
+      <img id="mto-d-img" alt="" width="120" height="120">
+      <div>
+        <div class="stock-badge made-to-order">Made to Order</div>
+        <h2 id="mto-d-title"></h2>
+        <div class="mto-d-meta" id="mto-d-meta"></div>
+        <div class="mto-d-price" id="mto-d-price"></div>
+      </div>
+    </div>
+    <div class="row-2">
+      <label class="field">Full Name<input type="text" name="full_name" autocomplete="name" required></label>
+      <label class="field">Phone or Instagram<input type="text" name="contact" placeholder="(704) 555-0123 or @handle" required></label>
+    </div>
+    <label class="field">Email<input type="email" name="email" autocomplete="email" required placeholder="For your receipt and order updates"></label>
+    <div class="row-2">
+      <label class="field">Finish<select name="finish" id="mto-finish" required></select></label>
+      <label class="field"><span id="mto-size-label">Size</span><select name="size" id="mto-size" required></select></label>
+    </div>
+    <label class="field">Delivery
+      <select name="delivery" required>
+        <option>Free tracked shipping (US)</option>
+        <option>Charlotte pickup / hand delivery</option>
+      </select>
+    </label>
+    <label class="field">Notes<textarea name="notes" placeholder="Anything we should know: photo for a photo pendant, stone color, deadline&hellip;"></textarea></label>
+    <label class="agree"><input type="checkbox" name="deposit_agreement" value="agreed" required>
+      <span id="mto-agree">I understand this piece is made to order, a 50% deposit is required to start, deposits are non-refundable once in production, and the balance is due before it ships.</span></label>
+    <button type="submit" class="btn-gold" id="mto-submit">Continue to Deposit</button>
+  </form>
+</dialog>
+
+<footer class="site-footer" id="contact">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Agee Jewelry</div>
+      <p>Hip hop jewelry &mdash; VVS moissanite pieces, custom orders, and same-day hand delivery.</p>
+      <p>Based in Charlotte, NC &middot; Shipping nationwide</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/custom/">Custom Orders</a></li>
+        <li><a href="/authenticity/">Authenticity Proof</a></li>
+        <li><a href="/policies/#local-pickup">Local Pickup Policy</a></li>
+        <li><a href="/shipping/">Shipping &amp; Returns</a></li>
+        <li><a href="/policies/#care">Care Guide</a></li>
+        <li><a href="mailto:ageejewelry@gmail.com">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>Instagram: <a href="https://www.instagram.com/ageejewelry/" target="_blank" rel="noopener">@ageejewelry</a></li>
+        <li>Text: <a href="sms:+16197248107">619-724-8107</a></li>
+        <li>Email: <a href="mailto:ageejewelry@gmail.com">ageejewelry@gmail.com</a></li>
+        <li>Charlotte, NC &mdash; local pickup &amp; hand delivery by arrangement</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pay-row" aria-label="Accepted payments and security">
+    <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg> Credit &amp; Debit Cards</span>
+    <span class="pay-badge ssl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Secure SSL Checkout</span>
+  </div>
+  <div class="footer-copy">&copy; 2026 Agee Jewelry &middot; All Rights Reserved</div>
+</footer>
+
+<div class="mobile-action-bar">
+  <a href="https://ig.me/m/ageejewelry" class="btn-ig" target="_blank" rel="noopener">DM</a>
+  <a href="sms:+16197248107" class="btn-ig">Text Us</a>
+  <a href="/custom/" class="btn-custom">Custom Order</a>
+</div>
+<script src="/collection/catalog.js"></script>
+<script src="/collection/collection.js"></script>
+</body>
+</html>

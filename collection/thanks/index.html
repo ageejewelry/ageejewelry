@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Received — Agee Jewelry</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="90+ made-to-order iced rings, pendants, bracelets and chains. 50% deposit starts your order. Free tracked shipping or Charlotte pickup.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/collection/collection.css">
+</head>
+<body>
+
+<div class="announce" role="region" aria-label="Announcement">
+  <span>Local Charlotte Pickups Available | <a href="https://www.instagram.com/ageejewelry/" target="_blank" rel="noopener">DM @ageejewelry</a> or <a href="sms:+16197248107">Text 619-724-8107</a> for Same-Day Hand Delivery</span>
+</div>
+
+<nav class="site-nav" aria-label="Main">
+  <a href="/" class="nav-logo">Agee Jewelry</a>
+  <ul class="nav-links">
+    <li><a href="/#shop">Shop All</a></li>
+    <li><a href="/collection/" >Made to Order</a></li>
+    <li><a href="/custom/">Custom Jewelry &amp; Deposits</a></li>
+    <li><a href="/authenticity/">Authenticity Proof</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="section-header">
+    <div class="section-eyebrow">Order Received</div>
+    <h1 class="section-title" id="t-title">One Step Left</h1>
+    <div class="section-divider"></div>
+  </div>
+  <div class="page-wrap" style="text-align:center">
+    <div class="mto-summary" id="t-sum" hidden>
+      <img id="t-img" alt="">
+      <div><div class="nm" id="t-name"></div><div class="meta" id="t-meta"></div><div class="pr" id="t-price"></div></div>
+    </div>
+    <p class="page-lede" id="t-msg">Thanks! We got your order details.</p>
+    <p id="t-pay" hidden><a class="btn-gold" id="t-btn" href="#" target="_blank" rel="noopener">Pay Deposit</a></p>
+    <p class="page-lede" id="t-note" style="font-size:13px"></p>
+    <p style="margin-top:28px"><a class="btn-ghost" href="/collection/">Back to the Collection</a></p>
+  </div>
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Agee Jewelry</div>
+      <p>Hip hop jewelry &mdash; VVS moissanite pieces, custom orders, and same-day hand delivery.</p>
+      <p>Based in Charlotte, NC &middot; Shipping nationwide</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/custom/">Custom Orders</a></li>
+        <li><a href="/authenticity/">Authenticity Proof</a></li>
+        <li><a href="/policies/#local-pickup">Local Pickup Policy</a></li>
+        <li><a href="/shipping/">Shipping &amp; Returns</a></li>
+        <li><a href="/policies/#care">Care Guide</a></li>
+        <li><a href="mailto:ageejewelry@gmail.com">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>Instagram: <a href="https://www.instagram.com/ageejewelry/" target="_blank" rel="noopener">@ageejewelry</a></li>
+        <li>Text: <a href="sms:+16197248107">619-724-8107</a></li>
+        <li>Email: <a href="mailto:ageejewelry@gmail.com">ageejewelry@gmail.com</a></li>
+        <li>Charlotte, NC &mdash; local pickup &amp; hand delivery by arrangement</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pay-row" aria-label="Accepted payments and security">
+    <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg> Credit &amp; Debit Cards</span>
+    <span class="pay-badge ssl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Secure SSL Checkout</span>
+  </div>
+  <div class="footer-copy">&copy; 2026 Agee Jewelry &middot; All Rights Reserved</div>
+</footer>
+
+<div class="mobile-action-bar">
+  <a href="https://ig.me/m/ageejewelry" class="btn-ig" target="_blank" rel="noopener">DM</a>
+  <a href="sms:+16197248107" class="btn-ig">Text Us</a>
+  <a href="/custom/" class="btn-custom">Custom Order</a>
+</div>
+<script src="/collection/catalog.js"></script>
+<script>
+(function () {
+  var A = window.AGEE || {}, d = null;
+  try { d = JSON.parse(sessionStorage.getItem('agee_mto') || 'null'); } catch (e) {}
+  var $ = function (id) { return document.getElementById(id); };
+  var wait = A.WAIT || 'Ships 2\u20133 weeks after deposit';
+  if (!d) { $('t-note').textContent = 'We\u2019ll text you within a few hours with next steps.'; return; }
+  $('t-sum').hidden = false; $('t-img').src = d.img; $('t-name').textContent = d.item;
+  $('t-meta').textContent = d.code + ' \u00b7 ' + d.finish + ' \u00b7 ' + d.size;
+  if (d.price === 'quote') {
+    $('t-title').textContent = 'Quote Requested';
+    $('t-price').textContent = 'Price on request';
+    $('t-msg').textContent = 'We\u2019ll text you a price within 24 hours. Once you approve it, a 50% deposit starts your order.';
+    return;
+  }
+  $('t-price').textContent = '$' + d.price + ' total \u00b7 $' + d.deposit + ' deposit';
+  if (A.DEPOSIT_LINK) {
+    var url = A.DEPOSIT_LINK + (A.DEPOSIT_LINK.indexOf('?') < 0 ? '?' : '&') + 'prefilled_email=' + encodeURIComponent(d.email || '');
+    $('t-btn').href = url; $('t-btn').textContent = 'Pay $' + d.deposit + ' Deposit'; $('t-pay').hidden = false;
+    $('t-msg').textContent = 'Pay your deposit to lock in your order. Enter $' + d.deposit + ' as the amount on the secure checkout page.';
+    $('t-note').textContent = wait + '. The balance of $' + (d.price - d.deposit) + ' is due before it ships or is handed off.';
+  } else {
+    $('t-msg').textContent = 'We\u2019ll text you a secure link for your $' + d.deposit + ' deposit within a few hours. Your order starts as soon as it\u2019s paid.';
+    $('t-note').textContent = wait + '. The balance of $' + (d.price - d.deposit) + ' is due before it ships or is handed off.';
+  }
+})();
+</script>
+</body>
+</html>
